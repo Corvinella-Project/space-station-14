@@ -1,0 +1,29 @@
+tts-voice-name-olivia = Olivia
+tts-voice-name-james = James
+tts-voice-name-frank = Frank
+tts-voice-name-emma = Emma
+tts-voice-name-charlotte = Charlotte
+tts-voice-name-amelia = Amelia
+tts-voice-name-sophia = Sophia
+tts-voice-name-john = John
+tts-voice-name-jenya = Jenya
+tts-voice-name-david = David
+tts-voice-name-ava = Ava
+tts-voice-name-sofia = Sofia
+tts-voice-name-emily = Emily
+tts-voice-name-daniel = Daniel
+tts-voice-name-lily = Lily
+tts-voice-name-mark = Mark
+tts-voice-name-zoey = Zoey
+tts-voice-name-steven = Steven
+tts-voice-name-maya = Maya
+tts-voice-name-alan = Alan
+tts-voice-name-alex = Alex
+
+tts-voice-name-borg = Borg
+tts-voice-name-pai = pAI
+
+tts-voice-name-announcer = Announcer
+tts-voice-name-jandarma-announcer = Jandarma Announcer
+tts-voice-name-announcer-security-announcer = Security System Announcer
+tts-voice-name-vending-machine = Vending Machine
