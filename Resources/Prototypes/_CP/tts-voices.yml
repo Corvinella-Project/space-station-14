@@ -1,0 +1,179 @@
+- type: ttsVoice
+  id: Olivia
+  name: tts-voice-name-olivia
+  sex: Female
+  speaker: en_0
+
+- type: ttsVoice
+  id: James
+  name: tts-voice-name-james
+  sex: Male
+  speaker: en_1
+
+- type: ttsVoice
+  id: Frank
+  name: tts-voice-name-frank
+  sex: Male
+  speaker: en_2
+
+- type: ttsVoice
+  id: Emma
+  name: tts-voice-name-emma
+  sex: Female
+  speaker: en_3
+
+- type: ttsVoice
+  id: Charlotte
+  name: tts-voice-name-charlotte
+  sex: Female
+  speaker: en_4
+
+- type: ttsVoice
+  id: Amelia
+  name: tts-voice-name-amelia
+  sex: Female
+  speaker: en_5
+
+- type: ttsVoice
+  id: Sophia
+  name: tts-voice-name-sophia
+  sex: Female
+  speaker: en_6
+
+- type: ttsVoice
+  id: John
+  name: tts-voice-name-john
+  sex: Male
+  speaker: en_7
+
+- type: ttsVoice
+  id: Jenya
+  name: tts-voice-name-jenya
+  sex: Unsexed
+  speaker: en_8
+
+- type: ttsVoice
+  id: David
+  name: tts-voice-name-david
+  sex: Male
+  speaker: en_9
+
+- type: ttsVoice
+  id: Ava
+  name: tts-voice-name-ava
+  sex: Female
+  speaker: en_10
+
+- type: ttsVoice
+  id: Sofia
+  name: tts-voice-name-sofia
+  sex: Female
+  speaker: en_11
+
+- type: ttsVoice
+  id: Emily
+  name: tts-voice-name-emily
+  sex: Female
+  speaker: en_12
+
+- type: ttsVoice
+  id: Daniel
+  name: tts-voice-name-daniel
+  sex: Male
+  speaker: en_13
+
+- type: ttsVoice
+  id: Lily
+  name: tts-voice-name-lily
+  sex: Female
+  speaker: en_14
+
+- type: ttsVoice
+  id: Mark
+  name: tts-voice-name-mark
+  sex: Male
+  speaker: en_15
+
+- type: ttsVoice
+  id: Zoey
+  name: tts-voice-name-zoey
+  sex: Female
+  speaker: en_16
+
+- type: ttsVoice
+  id: Steven
+  name: tts-voice-name-steven
+  sex: Male
+  speaker: en_17
+
+- type: ttsVoice
+  id: Maya
+  name: tts-voice-name-maya
+  sex: Female
+  speaker: en_18
+
+# Hidden
+- type: ttsVoice
+  id: Borg
+  name: tts-voice-name-borg
+  roundStart: false
+  sex: Unsexed
+  speaker: en_1
+  effects:
+  - Robotic
+
+- type: ttsVoice
+  id: PAI
+  name: tts-voice-name-pai
+  roundStart: false
+  sex: Unsexed
+  speaker: en_19
+
+- type: ttsVoice
+  id: Announcer
+  name: tts-voice-name-announcer
+  roundStart: false
+  sex: Male
+  speaker: en_14
+  effects:
+  - Announce
+  - Echo
+
+- type: ttsVoice
+  id: JandarmaAnnouncer
+  name: tts-voice-name-jandarma-announcer
+  roundStart: false
+  sex: Male
+  speaker: en_17
+  effects:
+  - Announce
+  - Echo
+
+- type: ttsVoice
+  id: SecuritySystemAnnouncer
+  name: tts-voice-name-announcer-security-announcer
+  roundStart: false
+  sex: Male
+  speaker: en_17
+  effects:
+  - Announce
+  - Echo
+  - Robotic
+
+- type: ttsVoice
+  id: VendingMachine
+  name: tts-voice-name-vending-machine
+  roundStart: false
+  sex: Male
+  speaker: en_17
+  effects:
+  - Robotic
+
+- type: ttsVoice
+  id: Pray
+  name: tts-voice-name-pray
+  roundStart: false
+  sex: Male
+  speaker: en_100
+  effects:
+  - Whisper

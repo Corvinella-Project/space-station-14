@@ -1,4 +1,6 @@
 using Content.Shared.Armor;
+using Content.Shared._CP.TTS;
+using Content.Shared._CP.TTS.Events;
 using Content.Shared.Chat;
 using Content.Shared.Chemistry;
 using Content.Shared.Chemistry.Hypospray.Events;
@@ -67,6 +69,10 @@ public partial class InventorySystem
         SubscribeLocalEvent<InventoryComponent, RefreshEquipmentHudEvent<ShowCriminalRecordIconsComponent>>(RefRelayInventoryEvent);
 
         SubscribeLocalEvent<InventoryComponent, GetVerbsEvent<EquipmentVerb>>(OnGetEquipmentVerbs);
+
+        // CP-start
+        SubscribeLocalEvent<InventoryComponent, TransformSpeakerVoiceEvent>(RelayTransformSpeakerVoiceEvent);
+        // CP-end.
     }
 
     protected void RefRelayInventoryEvent<T>(EntityUid uid, InventoryComponent component, ref T args) where T : IInventoryRelayEvent
@@ -121,6 +127,13 @@ public partial class InventorySystem
         }
     }
 
+
+    // CP-start
+    private void RelayTransformSpeakerVoiceEvent(Entity<InventoryComponent> ent, ref TransformSpeakerVoiceEvent args)
+    {
+        RelayEvent((ent.Owner, ent.Comp), args);
+    }
+    // CP-end.
 }
 
 /// <summary>
