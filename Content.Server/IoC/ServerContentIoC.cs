@@ -1,3 +1,4 @@
+using Content.Server._CP.TTS;
 using Content.Server.Administration;
 using Content.Server.Administration.Logs;
 using Content.Server.Administration.Managers;
@@ -77,6 +78,10 @@ namespace Content.Server.IoC
             IoCManager.Register<ConnectionManager>();
             IoCManager.Register<MultiServerKickManager>();
             IoCManager.Register<CVarControlManager>();
+
+            // CP-IoC-start
+            IoCManager.Register<TTSManager>();
+            // CP-IoC-end.
         }
     }
 }

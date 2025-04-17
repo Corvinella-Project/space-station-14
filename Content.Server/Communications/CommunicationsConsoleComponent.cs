@@ -1,6 +1,8 @@
-using Content.Server.UserInterface;
+using Content.Server.Chat.Systems;
+using Content.Shared._CP.TTS;
 using Content.Shared.Communications;
 using Robust.Shared.Audio;
+using Robust.Shared.Prototypes;
 
 namespace Content.Server.Communications
 {
@@ -60,12 +62,15 @@ namespace Content.Server.Communications
         /// Announce on all grids (for nukies)
         /// </summary>
         [DataField]
-        public bool Global = false;
+        public bool Global;
 
         /// <summary>
         /// Announce sound file path
         /// </summary>
         [DataField]
         public SoundSpecifier Sound = new SoundPathSpecifier("/Audio/Announcements/announce.ogg");
+
+        [DataField]
+        public ProtoId<TTSVoicePrototype> AnnouncerVoice = ChatSystem.AnnounceVoice;
     }
 }

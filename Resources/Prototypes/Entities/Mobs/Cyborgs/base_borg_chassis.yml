@@ -298,6 +298,8 @@
   - type: InteractionPopup
     interactSuccessSound:
       path: /Audio/Ambience/Objects/periodic_beep.ogg
+  - type: TTS
+    voice: Borg
 
 - type: entity
   id: BaseBorgChassisSyndicate

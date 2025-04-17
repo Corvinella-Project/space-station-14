@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Text.RegularExpressions;
+using Content.Shared._CP.TTS;
 using Content.Shared.CCVar;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
@@ -79,6 +80,9 @@ namespace Content.Shared.Preferences
         public ProtoId<SpeciesPrototype> Species { get; set; } = SharedHumanoidAppearanceSystem.DefaultSpecies;
 
         [DataField]
+        public string Voice { get; set; } = SharedHumanoidAppearanceSystem.DefaultVoice;
+
+        [DataField]
         public int Age { get; set; } = 18;
 
         [DataField]
@@ -130,6 +134,7 @@ namespace Content.Shared.Preferences
             string name,
             string flavortext,
             string species,
+            string voice, // CP-TTS
             int age,
             Sex sex,
             Gender gender,
@@ -144,6 +149,7 @@ namespace Content.Shared.Preferences
             Name = name;
             FlavorText = flavortext;
             Species = species;
+            Voice = voice; // CP-TTS
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -175,6 +181,7 @@ namespace Content.Shared.Preferences
             : this(other.Name,
                 other.FlavorText,
                 other.Species,
+                other.Voice,
                 other.Age,
                 other.Sex,
                 other.Gender,
@@ -238,6 +245,13 @@ namespace Content.Shared.Preferences
                 age = random.Next(speciesPrototype.MinAge, speciesPrototype.OldAge); // people don't look and keep making 119 year old characters with zero rp, cap it at middle aged
             }
 
+            // CP-TTS-start
+            var voiceId = random.Pick(prototypeManager
+                .EnumeratePrototypes<TTSVoicePrototype>()
+                .Where(o => CanHaveVoice(o, sex)).ToArray()
+            ).ID;
+            // CP-TTS-end.
+
             var gender = Gender.Epicene;
 
             switch (sex)
@@ -259,6 +273,7 @@ namespace Content.Shared.Preferences
                 Age = age,
                 Gender = gender,
                 Species = species,
+                Voice = voiceId, // CP-TTS
                 Appearance = HumanoidCharacterAppearance.Random(species, sex),
             };
         }
@@ -293,6 +308,12 @@ namespace Content.Shared.Preferences
             return new(this) { Species = species };
         }
 
+        // CP-TTS-start
+        public HumanoidCharacterProfile WithVoice(string voice)
+        {
+            return new(this) { Voice = voice };
+        }
+        // CP-TTS-end.
 
         public HumanoidCharacterProfile WithCharacterAppearance(HumanoidCharacterAppearance appearance)
         {
@@ -489,7 +510,7 @@ namespace Content.Shared.Preferences
                 Sex.Male => Sex.Male,
                 Sex.Female => Sex.Female,
                 Sex.Unsexed => Sex.Unsexed,
-                _ => Sex.Male // Invalid enum values.
+                _ => Sex.Male, // Invalid enum values.
             };
 
             // ensure the species can be that sex and their age fits the founds
@@ -504,7 +525,7 @@ namespace Content.Shared.Preferences
                 Gender.Female => Gender.Female,
                 Gender.Male => Gender.Male,
                 Gender.Neuter => Gender.Neuter,
-                _ => Gender.Epicene // Invalid enum values.
+                _ => Gender.Epicene, // Invalid enum values.
             };
 
             string name;
@@ -539,14 +560,14 @@ namespace Content.Shared.Preferences
                 name = GetName(Species, gender);
             }
 
-            string flavortext;
+            string flavorText;
             if (FlavorText.Length > MaxDescLength)
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..MaxDescLength];
+                flavorText = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..MaxDescLength];
             }
             else
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
+                flavorText = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
             }
 
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
@@ -555,7 +576,7 @@ namespace Content.Shared.Preferences
             {
                 PreferenceUnavailableMode.StayInLobby => PreferenceUnavailableMode.StayInLobby,
                 PreferenceUnavailableMode.SpawnAsOverflow => PreferenceUnavailableMode.SpawnAsOverflow,
-                _ => PreferenceUnavailableMode.StayInLobby // Invalid enum values.
+                _ => PreferenceUnavailableMode.StayInLobby, // Invalid enum values.
             };
 
             var spawnPriority = SpawnPriority switch
@@ -563,7 +584,7 @@ namespace Content.Shared.Preferences
                 SpawnPriorityPreference.None => SpawnPriorityPreference.None,
                 SpawnPriorityPreference.Arrivals => SpawnPriorityPreference.Arrivals,
                 SpawnPriorityPreference.Cryosleep => SpawnPriorityPreference.Cryosleep,
-                _ => SpawnPriorityPreference.None // Invalid enum values.
+                _ => SpawnPriorityPreference.None, // Invalid enum values.
             };
 
             var priorities = new Dictionary<ProtoId<JobPrototype>, JobPriority>(JobPriorities
@@ -573,18 +594,18 @@ namespace Content.Shared.Preferences
                     JobPriority.Low => true,
                     JobPriority.Medium => true,
                     JobPriority.High => true,
-                    _ => false
+                    _ => false,
                 }));
 
-            var hasHighPrio = false;
+            var hasHighPriority = false;
             foreach (var (key, value) in priorities)
             {
                 if (value != JobPriority.High)
                     continue;
 
-                if (hasHighPrio)
+                if (hasHighPriority)
                     priorities[key] = JobPriority.Medium;
-                hasHighPrio = true;
+                hasHighPriority = true;
             }
 
             var antags = AntagPreferences
@@ -596,7 +617,7 @@ namespace Content.Shared.Preferences
                          .ToList();
 
             Name = name;
-            FlavorText = flavortext;
+            FlavorText = flavorText;
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -617,6 +638,14 @@ namespace Content.Shared.Preferences
 
             _traitPreferences.Clear();
             _traitPreferences.UnionWith(GetValidTraits(traits, prototypeManager));
+
+            // CP-TTS-start
+            prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
+            if (voice is null || !CanHaveVoice(voice, Sex))
+            {
+                Voice = SharedHumanoidAppearanceSystem.DefaultSexVoice[sex];
+            }
+            // CP-TTS-end.
 
             // Checks prototypes exist for all loadouts and dump / set to default if not.
             var toRemove = new ValueList<string>();
@@ -676,6 +705,13 @@ namespace Content.Shared.Preferences
 
             return result;
         }
+
+        // CP-TTS-start
+        public static bool CanHaveVoice(TTSVoicePrototype voice, Sex sex)
+        {
+            return voice.RoundStart && sex == Sex.Unsexed || (voice.Sex == sex || voice.Sex == Sex.Unsexed);
+        }
+        // CP-TTS-end.
 
         public ICharacterProfile Validated(ICommonSession session, IDependencyCollection collection)
         {

@@ -66,7 +66,7 @@ namespace Content.Client.Lobby
             var msg = new MsgUpdateCharacter
             {
                 Profile = profile,
-                Slot = slot
+                Slot = slot,
             };
             _netManager.ClientSendMessage(msg);
         }
