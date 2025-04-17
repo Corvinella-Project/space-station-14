@@ -51,34 +51,7 @@
                     <!-- Vertical Padding-->
                     <Control VerticalExpand="True" />
                     <!-- Left Bot Panel -->
-                    <!-- Lobby Changelog -->
                     <BoxContainer VerticalAlignment="Bottom" VerticalExpand="True" Orientation="Vertical">
-                        <PanelContainer Name="LeftBottomPanel" StyleClasses="AngleRect" VerticalExpand="True"
-                                        MinWidth="480"
-                                        HorizontalExpand="True" HorizontalAlignment="Left"
-                                        MaxWidth="580" Modulate="#FFFFFFBB"
-                                        Margin="3 3 3 3">
-                            <BoxContainer Orientation="Vertical" HorizontalAlignment="Stretch"
-                                          VerticalAlignment="Bottom"
-                                          HorizontalExpand="True">
-                                <BoxContainer Orientation="Vertical" VerticalExpand="True"
-                                              HorizontalAlignment="Stretch" MaxWidth="580" VerticalAlignment="Top">
-                                    <controls:StripeBack VerticalAlignment="Top">
-                                        <BoxContainer Orientation="Horizontal" Name="ChangelogHeader"
-                                                      MouseFilter="Pass">
-                                            <Label HorizontalExpand="True" Text="{Loc 'changelog-tab-title-CorvinellaProject'}"
-                                                   VAlign="Center" StyleClasses="LabelHeading" Align="Center" />
-                                        </BoxContainer>
-                                    </controls:StripeBack>
-                                    <BoxContainer Orientation="Vertical" Name="ChangelogContent"
-                                                  HorizontalAlignment="Stretch" VerticalAlignment="Top" MinHeight="200">
-                                        <changelog:ChangelogTab Name="LobbyChangelogBody" RectClipContent="True"
-                                                                Access="Public" VerticalExpand="True" />
-                                    </BoxContainer>
-                                </BoxContainer>
-                            </BoxContainer>
-                        </PanelContainer>
-                        <controls:HSpacer Spacing="5" />
                         <BoxContainer Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Bottom">
                             <info:DevInfoBanner Name="DevInfoBanner" VerticalExpand="false" Margin="3 3 3 3" />
                             <PanelContainer StyleClasses="AngleRect">
