@@ -33,7 +33,7 @@ namespace Content.Client.Lobby
         protected override Type? LinkedScreenType { get; } = typeof(LobbyGui);
         public LobbyGui? Lobby;
 
-        protected override void Startup()
+        protected override async void Startup()
         {
             if (_userInterfaceManager.ActiveScreen == null)
             {

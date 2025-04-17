@@ -11,5 +11,5 @@ changelog-version-tag = { $fork }/{ $version }
 changelog-button = Changelog
 changelog-button-new-entries = Changelog (new!)
 
-changelog-tab-title-Changelog = Changelog
+changelog-tab-title-Changelog = Wizards Federation
 changelog-tab-title-Admin = Admin
