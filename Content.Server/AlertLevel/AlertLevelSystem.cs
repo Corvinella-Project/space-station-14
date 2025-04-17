@@ -189,14 +189,7 @@ public sealed class AlertLevelSystem : EntitySystem
         if (announce)
         {
             var sender = detail.Sender;
-            if (sender == null)
-            {
-                sender = stationName;
-            }
-            else
-            {
-                sender = Loc.GetString(sender);
-            }
+            sender = sender == null ? stationName : Loc.GetString(sender);
 
             _chatSystem.DispatchStationAnnouncement(station,
                 announcementFull,

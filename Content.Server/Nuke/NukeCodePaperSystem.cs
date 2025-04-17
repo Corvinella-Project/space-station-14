@@ -22,7 +22,7 @@ namespace Content.Server.Nuke
         {
             base.Initialize();
             SubscribeLocalEvent<NukeCodePaperComponent, MapInitEvent>(OnMapInit,
-                after: new []{ typeof(NukeLabelSystem) });
+                after: [typeof(NukeLabelSystem)]);
         }
 
         private void OnMapInit(EntityUid uid, NukeCodePaperComponent component, MapInitEvent args)
@@ -68,10 +68,13 @@ namespace Content.Server.Nuke
                     null,
                     null,
                     "paper_stamp-centcom",
-                    new List<StampDisplayInfo>
-                    {
-                        new StampDisplayInfo { StampedName = Loc.GetString("stamp-component-stamped-name-centcom"), StampedColor = Color.FromHex("#BB3232") },
-                    }
+                    [
+                        new StampDisplayInfo
+                        {
+                            StampedName = Loc.GetString("stamp-component-stamped-name-centcom"),
+                            StampedColor = Color.FromHex("#BB3232")
+                        },
+                    ]
                 );
                 _faxSystem.Receive(faxEnt, printout, null, fax);
 

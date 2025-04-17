@@ -1,5 +1,4 @@
 using Content.Server.Chat.Systems;
-using Content.Server.UserInterface;
 using Content.Shared._CP.TTS;
 using Content.Shared.Communications;
 using Robust.Shared.Audio;
@@ -63,7 +62,7 @@ namespace Content.Server.Communications
         /// Announce on all grids (for nukies)
         /// </summary>
         [DataField]
-        public bool Global = false;
+        public bool Global;
 
         /// <summary>
         /// Announce sound file path

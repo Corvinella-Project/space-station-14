@@ -75,9 +75,9 @@ public sealed partial class AlertLevelDetail
 
     // CP-start
     [DataField]
-    public string? Sender { get; private set; }  = null;
+    public string? Sender { get; private set; }
 
-    [DataField("announcerVoice")]
+    [DataField]
     public ProtoId<TTSVoicePrototype> AnnouncerVoice { get; private set; } = "Announcer";
     // CP-end.
 }

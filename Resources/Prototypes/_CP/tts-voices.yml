@@ -138,6 +138,8 @@
   effects:
   - Announce
   - Echo
+  tags:
+  - AnnouncerVoice
 
 - type: ttsVoice
   id: JandarmaAnnouncer
@@ -148,6 +150,8 @@
   effects:
   - Announce
   - Echo
+  tags:
+  - AnnouncerVoice
 
 - type: ttsVoice
   id: SecuritySystemAnnouncer
@@ -159,6 +163,8 @@
   - Announce
   - Echo
   - Robotic
+  tags:
+  - AnnouncerVoice
 
 - type: ttsVoice
   id: VendingMachine

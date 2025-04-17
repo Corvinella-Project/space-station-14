@@ -1,4 +1,5 @@
 ﻿using Content.Shared.Humanoid;
+using Content.Shared.Tag;
 using Robust.Shared.Prototypes;
 
 namespace Content.Shared._CP.TTS;
@@ -31,4 +32,10 @@ public sealed class TTSVoicePrototype : IPrototype
 
     [DataField("effects")]
     public TTSEffects Effects { get; }
+
+    /// <summary>
+    ///     Tags that allows to sort voices.
+    /// </summary>
+    [DataField]
+    public List<ProtoId<TagPrototype>> Tags = [];
 }

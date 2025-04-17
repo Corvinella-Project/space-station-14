@@ -15,6 +15,7 @@ public sealed class ClearTTSQueueCommand : IConsoleCommand
     public string Command => "clearttsqueue";
     public string Description => Loc.GetString("clear-tts-queue-command-description");
     public string Help => Loc.GetString("clear-tts-queue-command-help");
+
     public void Execute(IConsoleShell shell, string argStr, string[] args)
     {
         var entities = new List<NetEntity>();

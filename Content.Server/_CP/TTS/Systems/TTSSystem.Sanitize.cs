@@ -40,7 +40,7 @@ public sealed partial class TTSSystem
     private static readonly IReadOnlyDictionary<string, string> WordReplacement =
         new Dictionary<string, string>()
         {
-            { "sw", "StarWark" }
+            { "sw", "StarWark" },
         };
 }
 

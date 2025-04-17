@@ -9,7 +9,6 @@ using Content.Shared._CP.TTS.Events;
 using Content.Shared.GameTicking;
 using Content.Shared.Humanoid;
 using Content.Shared.Players.RateLimiting;
-using Robust.Server.Player;
 using Robust.Shared.Configuration;
 using Robust.Shared.Player;
 using Robust.Shared.Prototypes;
@@ -236,6 +235,7 @@ public sealed partial class TTSSystem : EntitySystem
         }
     }
 
+    // ReSharper disable once InconsistentNaming
     public async Task<string?> GenerateCachedTTS(string message, ProtoId<TTSVoicePrototype> voiceId, TTSEffects effects)
     {
         return !_prototypeManager.TryIndex(voiceId, out var voiceProto) ? null : (await GenerateTTS(message, voiceProto.Speaker, effects)).cacheKey;
@@ -255,11 +255,11 @@ public sealed partial class TTSSystem : EntitySystem
             textSanitized += ".";
         }
 
-        var ssmlTraits = _CP.TTS.Systems.TTSSystem.SoundTraits.RateFast;
+        var ssmlTraits = SoundTraits.RateFast;
 
         if (effects.HasFlag(TTSEffects.Whisper))
         {
-            ssmlTraits = _CP.TTS.Systems.TTSSystem.SoundTraits.PitchVeryLow;
+            ssmlTraits = SoundTraits.PitchVeryLow;
         }
 
         var textSsml = ToSsmlText(textSanitized, ssmlTraits);

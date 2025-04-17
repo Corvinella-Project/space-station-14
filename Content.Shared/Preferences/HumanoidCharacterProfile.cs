@@ -510,7 +510,7 @@ namespace Content.Shared.Preferences
                 Sex.Male => Sex.Male,
                 Sex.Female => Sex.Female,
                 Sex.Unsexed => Sex.Unsexed,
-                _ => Sex.Male // Invalid enum values.
+                _ => Sex.Male, // Invalid enum values.
             };
 
             // ensure the species can be that sex and their age fits the founds
@@ -525,7 +525,7 @@ namespace Content.Shared.Preferences
                 Gender.Female => Gender.Female,
                 Gender.Male => Gender.Male,
                 Gender.Neuter => Gender.Neuter,
-                _ => Gender.Epicene // Invalid enum values.
+                _ => Gender.Epicene, // Invalid enum values.
             };
 
             string name;
@@ -560,14 +560,14 @@ namespace Content.Shared.Preferences
                 name = GetName(Species, gender);
             }
 
-            string flavortext;
+            string flavorText;
             if (FlavorText.Length > MaxDescLength)
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..MaxDescLength];
+                flavorText = FormattedMessage.RemoveMarkupOrThrow(FlavorText)[..MaxDescLength];
             }
             else
             {
-                flavortext = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
+                flavorText = FormattedMessage.RemoveMarkupOrThrow(FlavorText);
             }
 
             var appearance = HumanoidCharacterAppearance.EnsureValid(Appearance, Species, Sex);
@@ -576,7 +576,7 @@ namespace Content.Shared.Preferences
             {
                 PreferenceUnavailableMode.StayInLobby => PreferenceUnavailableMode.StayInLobby,
                 PreferenceUnavailableMode.SpawnAsOverflow => PreferenceUnavailableMode.SpawnAsOverflow,
-                _ => PreferenceUnavailableMode.StayInLobby // Invalid enum values.
+                _ => PreferenceUnavailableMode.StayInLobby, // Invalid enum values.
             };
 
             var spawnPriority = SpawnPriority switch
@@ -584,7 +584,7 @@ namespace Content.Shared.Preferences
                 SpawnPriorityPreference.None => SpawnPriorityPreference.None,
                 SpawnPriorityPreference.Arrivals => SpawnPriorityPreference.Arrivals,
                 SpawnPriorityPreference.Cryosleep => SpawnPriorityPreference.Cryosleep,
-                _ => SpawnPriorityPreference.None // Invalid enum values.
+                _ => SpawnPriorityPreference.None, // Invalid enum values.
             };
 
             var priorities = new Dictionary<ProtoId<JobPrototype>, JobPriority>(JobPriorities
@@ -594,18 +594,18 @@ namespace Content.Shared.Preferences
                     JobPriority.Low => true,
                     JobPriority.Medium => true,
                     JobPriority.High => true,
-                    _ => false
+                    _ => false,
                 }));
 
-            var hasHighPrio = false;
+            var hasHighPriority = false;
             foreach (var (key, value) in priorities)
             {
                 if (value != JobPriority.High)
                     continue;
 
-                if (hasHighPrio)
+                if (hasHighPriority)
                     priorities[key] = JobPriority.Medium;
-                hasHighPrio = true;
+                hasHighPriority = true;
             }
 
             var antags = AntagPreferences
@@ -617,7 +617,7 @@ namespace Content.Shared.Preferences
                          .ToList();
 
             Name = name;
-            FlavorText = flavortext;
+            FlavorText = flavorText;
             Age = age;
             Sex = sex;
             Gender = gender;
@@ -642,7 +642,9 @@ namespace Content.Shared.Preferences
             // CP-TTS-start
             prototypeManager.TryIndex<TTSVoicePrototype>(Voice, out var voice);
             if (voice is null || !CanHaveVoice(voice, Sex))
+            {
                 Voice = SharedHumanoidAppearanceSystem.DefaultSexVoice[sex];
+            }
             // CP-TTS-end.
 
             // Checks prototypes exist for all loadouts and dump / set to default if not.
