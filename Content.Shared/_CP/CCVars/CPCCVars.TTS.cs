@@ -67,11 +67,6 @@ public sealed partial class CPCCVars
         CVarDef.Create("tts.rate_limit_count", 5, CVar.SERVERONLY);
     #endregion
     #region Client
-
-    // ReSharper disable once InconsistentNaming
-    public static readonly CVarDef<bool> TTSClientEnabled =
-        CVarDef.Create("tts.client_enabled", true, CVar.CLIENTONLY | CVar.ARCHIVE);
-
     // ReSharper disable once InconsistentNaming
     public static readonly CVarDef<float> TTSVolume =
         CVarDef.Create("tts.volume", 1f, CVar.CLIENTONLY | CVar.ARCHIVE);
