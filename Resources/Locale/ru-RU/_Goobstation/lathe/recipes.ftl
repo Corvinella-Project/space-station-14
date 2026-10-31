@@ -1,0 +1,11 @@
+lathe-recipe-BaseTranslatorImplanter-name = имплантер "Переводчик Межгалактический"
+
+lathe-recipe-BasicGalaticCommonTranslatorImplanter-subname = имплантер "Переводчик Межгалактический"
+lathe-recipe-AdvancedGalaticCommonTranslatorImplanter-subname = имплантер "Продвинутый переводчик Межгалактический"
+lathe-recipe-BubblishTranslatorImplanter-subname = имплантер "Переводчик Булькяз"
+lathe-recipe-DraconicTranslatorImplanter-subname = имплантер "Переводчик Драконовый"
+lathe-recipe-SolCommonTranslatorImplanter-subname = имплантер "Переводчик Общесолнечный"
+lathe-recipe-RootSpeakTranslatorImplanter-subname = имплантер "Переводчик Корнеречь"
+lathe-recipe-MofficTranslatorImplanter-subname = имплантер "Переводчик Моффик"
+lathe-recipe-NewKinPidginTranslatorImplanter-subname = имплантер "Переводчик Ка'ракк"
+lathe-recipe-ChevalTranslatorImplanter-subname = имплантер "Переводчик Парнокопытный"

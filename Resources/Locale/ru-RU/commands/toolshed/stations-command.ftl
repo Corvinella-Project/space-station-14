@@ -1,0 +1,10 @@
+command-description-stations-list =Отображает список всех станций.
+command-description-stations-get =Отображает активную станцию, если она одна.
+command-description-stations-getowningstation =Определяет станцию, которой принадлежит указанная сущность.
+command-description-stations-grids =Отображает все гриды, связанные с указанной станцией.
+command-description-stations-config =Отображает конфигурацию для указанной станции, если она есть.
+command-description-stations-addgrid =Добавляет грид к указанной станции.
+command-description-stations-rmgrid =Удаляет грид из указанной станции.
+command-description-stations-rename =Переименовывает указанную станцию.
+command-description-stations-largestgrid =Отображает самый большой грид на указанной станции, если она есть.
+command-description-stations-rerollBounties =Сбрасывает все текущие награды на станции и выбирает новые.

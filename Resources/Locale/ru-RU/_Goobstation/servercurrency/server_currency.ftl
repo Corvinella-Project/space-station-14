@@ -1,0 +1,73 @@
+# SPDX-FileCopyrightText: 2025 Aiden <28298836+Aidenkrz@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 Aiden <aiden@djkraz.com>
+# SPDX-FileCopyrightText: 2025 SX-7 <92227810+SX-7@users.noreply.github.com>
+# SPDX-FileCopyrightText: 2025 gluesniffler <159397573+gluesniffler@users.noreply.github.com>
+#
+# SPDX-License-Identifier: AGPL-3.0-or-later
+
+# Trauma - changed all Goob Coin to Evil Coin
+server-currency-name-singular = §
+server-currency-name-plural = §
+
+## Commands
+
+server-currency-gift-command = gift
+server-currency-gift-command-description = Передать часть вашего баланса другому игроку.
+server-currency-gift-command-help = Использование: gift <игрок> <сумма>
+server-currency-gift-command-error-1 = Вы не можете подарить себе!
+server-currency-gift-command-error-2 = У вас недостаточно средств для передачи! Ваш баланс: { $balance }§.
+server-currency-gift-command-giver = Вы передали { $player } { $amount }§.
+server-currency-gift-command-reciever = { $player } передал вам { $amount }§.
+
+server-currency-balance-command = balance
+server-currency-balance-command-description = Показывает ваш баланс.
+server-currency-balance-command-help = Использование: balance
+server-currency-balance-command-return = У вас { $balance }.
+
+server-currency-add-command = balance:add
+server-currency-add-command-description = Добавляет валюту на счет игрока.
+server-currency-add-command-help = Использование: balance:add <игрок> <сумма>
+
+server-currency-remove-command = balance:rem
+server-currency-remove-command-description = Убирает валюту со счета игрока.
+server-currency-remove-command-help = Использование: balance:rem <игрок> <сумма>
+
+server-currency-set-command = balance:set
+server-currency-set-command-description = Устанавливает баланс игрока.
+server-currency-set-command-help = Использование: balance:set <игрок> <сумма>
+
+server-currency-get-command = balance:get
+server-currency-get-command-description = Узнаёт баланс указанного игрока.
+server-currency-get-command-help = Использование: balance:get <игрок>
+
+server-currency-command-completion-1 = Имя игрока
+server-currency-command-completion-2 = Значение
+server-currency-command-error-1 = Игрок с таким именем не найден.
+server-currency-command-error-2 = Значение должно быть целым числом.
+server-currency-command-return = У { $player } { $balance }.
+
+# 65% Update
+
+gs-balanceui-title = Магазин
+gs-balanceui-confirm = Подтвердить
+
+gs-balanceui-gift-label = Перевод:
+gs-balanceui-gift-player = Игрок
+gs-balanceui-gift-player-tooltip = Введите имя игрока, которому хотите отправить деньги
+gs-balanceui-gift-value = Сумма
+gs-balanceui-gift-value-tooltip = Количество денег для перевода
+
+gs-balanceui-shop-label = Магазин токенов
+gs-balanceui-shop-empty = Нет в наличии!
+gs-balanceui-shop-buy = Купить
+gs-balanceui-shop-footer = ⚠ Используйте ваш токен через Ahelp. Только 1 раз в день.
+
+gs-balanceui-shop-token-label = Токены
+gs-balanceui-shop-tittle-label = Титулы
+
+gs-balanceui-admin-add-label = Добавить (или убрать) деньги:
+gs-balanceui-admin-add-player = Имя игрока
+gs-balanceui-admin-add-value = Сумма
+
+gs-balanceui-shop-click-confirm = Нажмите ещё раз для подтверждения
+gs-balanceui-shop-purchased = Куплено { $item }
