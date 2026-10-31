@@ -1,0 +1,5 @@
+status-effect-examine-adrenaline = [color=red]Каждая часть {POSS-ADJ($target)} тела выглядит напряжённой и настороженной.[/color]
+status-effect-examine-drunk = [color=brown]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} в состоянии опьянения...[/color]
+status-effect-examine-seeing-rainbow = [color=lightgreen]{CAPITALIZE(SUBJECT($target))} {CONJUGATE-BE($target)} поглядывает на то, чего нет.[/color]
+status-effect-examine-stunned = [color=yellow]{CAPITALIZE(POSS-ADJ($target))} тело выглядит истощённым и неспособным двигаться.[/color]
+status-effect-examine-temporary-blindness = [color=lightblue]{CAPITALIZE(POSS-ADJ($target))} глаза расфокусированы. {CAPITALIZE(SUBJECT($target))} явно испытывает трудности со зрением.[/color]

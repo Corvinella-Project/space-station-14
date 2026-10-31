@@ -1,0 +1,12 @@
+seeds-lemonade-name = лимонад
+seeds-cocaplant-name = лист коки
+seeds-coconut-name = кокос
+seeds-cherrybomb-name = вишнёвая бомба
+seeds-appledelicious-name = аппетитное яблоко
+seeds-applemeth-name = мет-яблоко
+seeds-clearcorn-name = прозрачная кукуруза
+seeds-peanut-name = арахис
+seeds-magicmush-name = волшебные грибы
+seeds-synthmeat-name = синтмясо
+seeds-balloonmelon-name = дыня-шарик
+seeds-steelwheat-name = стальная пшеница

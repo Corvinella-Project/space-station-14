@@ -1,0 +1,3 @@
+# For all the tider chem people come up with
+reagent-name-nitrated-slurry = нитрованная взвесь
+reagent-desc-nitrated-slurry = Гниющая масса, превращённая во взвесь. В ней плавают куски...
