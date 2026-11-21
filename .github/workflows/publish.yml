@@ -16,7 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: Fail if we are attempting to run on the master branch
-      if: ${{GITHUB.REF_NAME == 'master' && github.repository == 'space-wizards/space-station-14'}}
+      if: ${{GITHUB.REF_NAME == 'master' && github.repository == 'Corvinella-Project/space-station-14'}}
       run: exit 1
 
 #    - name: Install dependencies
@@ -29,26 +29,26 @@ jobs:
         filter: blob:none
 
     # Corvax-Secrets-Start
-    - name: Setup secrets
-      env:
-        SSH_KEY: ${{ secrets.SECRETS_PRIVATE_KEY }}
-      if: ${{ env.SSH_KEY != '' }}
-      run: |
-        mkdir -p ~/.ssh
-        echo "${{ secrets.SECRETS_PRIVATE_KEY }}" > ~/.ssh/id_rsa
-        chmod 600 ~/.ssh/id_rsa
-        echo "HOST *" > ~/.ssh/config
-        echo "  Hostname github.com" >> ~/.ssh/config
-        echo "  Port 22" >> ~/.ssh/config
-        echo "  StrictHostKeyChecking no" >> ~/.ssh/config
-        git clone git@github.com:corvax-nexus/secrets.git Secrets
-        cd Secrets
-        git checkout goob && cd ..
-        cp -R Secrets/Resources/Prototypes Resources/Prototypes/CorvaxSecrets
-        cp -R Secrets/Resources/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
-        cp -R Secrets/Resources/Locale Resources/Locale/ru-RU/corvax-secrets
-        cp -R Secrets/Resources/Textures Resources/Textures/CorvaxSecrets
-        cp -R Secrets/Resources/Audio Resources/Audio/CorvaxSecrets
+    # - name: Setup secrets
+    #   env:
+    #     SSH_KEY: ${{ secrets.SECRETS_PRIVATE_KEY }}
+    #   if: ${{ env.SSH_KEY != '' }}
+    #   run: |
+    #     mkdir -p ~/.ssh
+    #     echo "${{ secrets.SECRETS_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+    #     chmod 600 ~/.ssh/id_rsa
+    #     echo "HOST *" > ~/.ssh/config
+    #     echo "  Hostname github.com" >> ~/.ssh/config
+    #     echo "  Port 22" >> ~/.ssh/config
+    #     echo "  StrictHostKeyChecking no" >> ~/.ssh/config
+    #     git clone git@github.com:corvax-nexus/secrets.git Secrets
+    #     cd Secrets
+    #     git checkout goob && cd ..
+    #     cp -R Secrets/Resources/Prototypes Resources/Prototypes/CorvaxSecrets
+    #     cp -R Secrets/Resources/ServerPrototypes Resources/Prototypes/CorvaxSecretsServer
+    #     cp -R Secrets/Resources/Locale Resources/Locale/ru-RU/corvax-secrets
+    #     cp -R Secrets/Resources/Textures Resources/Textures/CorvaxSecrets
+    #     cp -R Secrets/Resources/Audio Resources/Audio/CorvaxSecrets
     # Corvax-Secrets-End
 
     - name: Setup .NET Core
