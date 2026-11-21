@@ -108,6 +108,11 @@ public sealed class AdminFrozenSystem : EntitySystem
         _blocker.UpdateCanMove(uid);
     }
 
+    private void UpdateCanMove(EntityUid uid, AdminFrozenComponent component, ComponentShutdown args)
+    {
+        _blocker.UpdateCanMove(uid);
+    }
+
     private void OnEmoteAttempt(EntityUid uid, AdminFrozenComponent component, EmoteAttemptEvent args)
     {
         if (component.Muted)

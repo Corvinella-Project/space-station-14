@@ -116,6 +116,11 @@ public sealed class FreezeContactsSystem : EntitySystem
         _blocker.UpdateCanMove(uid);
     }
 
+    private void MoveUpdate(EntityUid uid, FrozenComponent component, ComponentShutdown args)
+    {
+        _blocker.UpdateCanMove(uid);
+    }
+
     private void OnInteractAttempt(Entity<FrozenComponent> ent, ref InteractionAttemptEvent args)
     {
         args.Cancelled = true;
