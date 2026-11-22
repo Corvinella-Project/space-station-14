@@ -17,7 +17,7 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = f"https://cdn.station14.ru:{CDN_PORT}/"
+ROBUST_CDN_URL = f"http://cdn.station14.ru:{CDN_PORT}/"
 
 def get_publish_token() -> str:
     try:
