@@ -80,6 +80,7 @@ jobs:
     - name: Publish version
       run: Tools/publish_multi_request.py
       env:
+        CDN_PORT: ${{ secrets.CDN_PORT }}
         PUBLISH_TOKEN: ${{ secrets.PUBLISH_TOKEN }}
         GITHUB_REPOSITORY: ${{ vars.GITHUB_REPOSITORY }}
         FORK_ID: ${{ vars.FORK_ID }}

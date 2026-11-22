@@ -6,6 +6,7 @@ import os
 import subprocess
 from typing import Iterable
 
+CDN_PORT = os.environ['CDN_PORT']
 DRY_RUN = os.environ.get("DRY_RUN", "").lower() in ("1", "true", "yes")
 VERSION = os.environ["GITHUB_SHA"]
 FORK_ID = os.environ['FORK_ID']
@@ -16,7 +17,7 @@ RELEASE_DIR = "release"
 # CONFIGURATION PARAMETERS
 # Forks should change these to publish to their own infrastructure.
 #
-ROBUST_CDN_URL = "https://cdn.station14.ru/"
+ROBUST_CDN_URL = f"https://cdn.station14.ru:{CDN_PORT}/"
 
 def get_publish_token() -> str:
     try:
