@@ -1,0 +1,133 @@
+# Default rules
+- type: guideEntry
+  id: CornivellaRuleset
+  name: Правила сервера
+  priority: 0
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Ruleset.xml"
+  children:
+  - CornivellaRule0
+#  - CornivellaRule1
+  - CornivellaRule11
+  - CornivellaRule12
+#  - CornivellaRule2
+  - CornivellaRule21
+  - CornivellaRule22
+  - CornivellaRule23
+#  - CornivellaRule3
+  - CornivellaRule31
+  - CornivellaRule32
+  - CornivellaRule33
+  - CornivellaRule34
+#  - CornivellaRule4
+  - CornivellaRule41
+  - CornivellaRule42
+#  - CornivellaRule5
+  - CornivellaRule51
+  - CornivellaRule52
+  - CornivellaPunishmentTypes
+
+- type: guideEntry
+  id: CornivellaPunishmentTypes
+  name: Игровые наказания
+  priority: 20
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/PunishmentTypes.xml"
+
+- type: guideEntry
+  id: CornivellaRule0
+  name: Правило 0
+  priority: 1
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule0.xml"
+
+- type: guideEntry
+  id: CornivellaRule11
+  name: Правило 1.1
+  priority: 2
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule1.1.xml"
+
+- type: guideEntry
+  id: CornivellaRule12
+  name: Правило 1.2
+  priority: 3
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule1.2.xml"
+
+- type: guideEntry
+  id: CornivellaRule21
+  name: Правило 2.1
+  priority: 4
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule2.1.xml"
+
+- type: guideEntry
+  id: CornivellaRule22
+  name: Правило 22
+  priority: 5
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule2.2.xml"
+
+- type: guideEntry
+  id: CornivellaRule23
+  name: Правило 2.3
+  priority: 6
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule2.3.xml"
+
+- type: guideEntry
+  id: CornivellaRule31
+  name: Правило 3.1
+  priority: 7
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule3.1.xml"
+
+- type: guideEntry
+  id: CornivellaRule32
+  name: Правило 3.2
+  priority: 8
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule3.2.xml"
+
+- type: guideEntry
+  id: CornivellaRule33
+  name: Правило 3.3
+  priority: 9
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule3.3.xml"
+
+- type: guideEntry
+  id: CornivellaRule34
+  name: Правило 3.4
+  priority: 10
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule3.4.xml"
+
+- type: guideEntry
+  id: CornivellaRule41
+  name: Правило 4.1
+  priority: 11
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule4.1.xml"
+
+- type: guideEntry
+  id: CornivellaRule42
+  name: Правило 4.2
+  priority: 12
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule4.2.xml"
+
+- type: guideEntry
+  id: CornivellaRule51
+  name: Правило 5.1
+  priority: 13
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule5.1.xml"
+
+- type: guideEntry
+  id: CornivellaRule52
+  name: Правило 5.2
+  priority: 14
+  ruleEntry: true
+  text: "/ServerInfo/_CornivellaGoob/Guidebook/ServerRules/Rule5.2.xml"
